@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home page Todos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Home page Todos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid class="ion-grid">
+    <form action=""
+      [formGroup]="validateForm"
+      (ngSubmit)="submitForm(validateForm.value)"
+    >
+      <ion-row>
+        <ion-col size="9">
+          <ion-input
+            placeholder="Enter Todo"
+            formControlName = "title"
+          >
+          </ion-input>
+        </ion-col>
+          <ion-button type="submit" color="primary">
+            Add
+          </ion-button>
+        <ion-col size="3">
+
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+  <ion-list>
+    <app-todo
+      *ngFor="let todo of todo$"
+      [todo]="todo"
+      [delete]="this.delete"
+      [update]="this.update"
+    >
+    </app-todo>
+  </ion-list>
+</ion-content>
