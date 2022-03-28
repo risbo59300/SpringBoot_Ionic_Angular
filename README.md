@@ -4,3 +4,5 @@ Elle permet d'ajouter un todo, de le supprimer et de modifier l'état du todo s'
 J'ai utilsé Spring Boot et Gradle pour la partie backend,
 J'ai utilisé Ionic avec Angular pour la partie frontend,
 et enfin, j'ai utilisé PostgreSQL pour stocker les données.
+Le front-end se trouve sur la brache frontend
+Et le back-end sur la branche backend.
